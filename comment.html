@@ -17,6 +17,8 @@
     <link href="css/swiper.css" rel="stylesheet">
     <link href="css/magnific-popup.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/vssue/dist/vssue.min.css">
+
     
     <!-- Favicon  -->
     <link rel="icon" href="images/favicon.png">
@@ -116,6 +118,7 @@
     </header> <!-- end of header -->
     <!-- end of header -->
     <div class="container">
+        <div id="vssue"></div>
         <div id="gitalk-container"></div>
     </div>
     <!-- Footer -->
@@ -193,6 +196,29 @@
 
         gitalk.render('gitalk-container');
     </script>
+
+    <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+    <script src="https://unpkg.com/vssue/dist/vssue.github.min.js"></script>
+    <script>
+        new Vue({
+          el: '#vssue',
+
+          data: {
+            title: 'Vssue Dev',
+
+            options: {
+              owner: 'sunshinev',
+              repo: 'laravel-gii-home',
+              clientId: 'de063f18f2c4bd9c9939',
+              clientSecret: '6f763574f30eda33867f78fc09458cd491d36544', // only required for some of the platforms
+            },
+          },
+
+          template: `<vssue :title="title" :options="options"></vssue>`,
+        })
+    </script>
+
+
     
         
     <!-- Scripts -->
